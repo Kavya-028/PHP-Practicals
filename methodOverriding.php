@@ -8,7 +8,7 @@
 </head>
 <body>
     <?php
-        class A()
+        class A
         {
             function displayAns($a, $b)
             {
