@@ -1,56 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Check Lowercase</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>String Functions</title>
 </head>
 <body>
-<form method="post" action="">
-    <label for="userInput">Enter a string: </label>
-    <input type="text" id="userInput" name="userInput" required>
-    <button type="submit">Check Lowercase</button>
-</form>
-<?php
-if (isset($_POST['userInput'])) {
-    $userInput = isset($_POST["userInput"]) ? $_POST["userInput"] : "";
+    <form action="" method="post">
+        Enter String: <input type="text" name="str"><br>
+        <input type="submit" name="btn"><br>
+        <?php
+            if(isset($_POST['str'])) {
+                $str=$_POST['str'];
+                str_replace(" ","",$str);
+                if(ctype_lower($str)) {
+                    echo "$str is <b>in</b> LowerCase";
+                } else {
+                    echo "$str is <b>not in</b> LowerCase";
+                }
+                echo "<br>";
 
-    echo "Entered String: $userInput";
-    echo "<br>";
-    if ($userInput === strtolower($userInput)) {
-        echo "The string '$userInput' is lowercase.";
-    } else {
-        echo "The string '$userInput' is not lowercase.<br>";
-    }
-}
-?>
-    <?php
-    $string = "Hello, World!";
-    $reversedString = strrev($string);
-    echo "<br><br>";
-    echo "Original String: $string<br>";
-    echo "Reversed String: $reversedString <br>";
-?>
+                echo "<b>String after reverse</b>: " . strrev($str);
+                echo "<br>";
 
-<?php
-    $string = "   This is a string with spaces.   ";
-    $trimmedString = trim($string);
-    echo "<br>";
-    echo "Original String: $string<br>";
-    echo "String without Spaces: $trimmedString<br><br>";
-?>
+                echo "<b>String after removing whitespaces</b>: " . str_replace(" ","",$str);
+                echo "<br>";
 
-<?php
-    $string = "PHP is a Programming Language";
-    $wordToReplace = "Programming";
-    $replacement = "Server Side Scripting";
-    $updatedString = str_replace($wordToReplace, $replacement, $string);
+                echo "<b>String before replace</b>: " . $str;
+                echo "<br>";
 
-    echo "Original String: $string<br>";
-    echo "Updated String: $updatedString";
-?>
-
-
-
+                echo "<b>String after replace</b>: ";
+                echo str_replace('Scripting', 'Server-Side Scripting', $str);
+            }
+        ?>
+    </form>
 </body>
 </html>
