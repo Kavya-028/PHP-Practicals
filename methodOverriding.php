@@ -21,7 +21,7 @@
             function displayAns($a, $b)
             {
                 $result=$a+$b;
-                echo "Addition of $a and $b is: " . $result;
+                echo "Addition of $a and $b is: " . "<b>" .$result;
             }
         }
         $obj = new B();
