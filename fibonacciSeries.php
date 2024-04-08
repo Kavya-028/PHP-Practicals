@@ -19,7 +19,13 @@
 			 $f1=$f2;
 			 $f2=$sum;
 		 }
-	 }
+	// 	$result = 1;
+	// 	for($i=2; $i <= $fibo; $i++){
+	// 		$result *= $i;
+	// 	}
+
+	// 	echo "$result";
+	//  }
 ?>
 </body>
 </html>
