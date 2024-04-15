@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Information Form</title>
+    <style>
+        p{
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <h2>Employee Information Form</h2>
@@ -27,27 +32,27 @@
         $salary = $_POST['salary'];
 
         if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
-            echo "Only letters and white space allowed in name<br>";
+            echo "<p>Only letters and white space allowed in name</p><br>";
             $error = true; 
         }
         
         if (!preg_match("/^[a-zA-Z ]*$/", $department)) {
-            echo "Only letters and white spaces allowed in Department<br>";
+            echo "<p>Only letters and white spaces allowed in Department</p><<br>";
             $error = true; 
         }
 
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            echo "Invalid email format<br>";
+            echo "<p>Invalid email format</p><br>";
             $error = true; 
         }
 
         if (!is_numeric($salary)) {
-            echo "Salary must be a number<br>";
+            echo "<p>Salary must be a Number</p><br>";
             $error = true; 
         }
 
         if (!preg_match("/^[a-zA-Z ]*$/", $designation)) {
-            echo "Only letters and white spaces allowed in Designation<br>";
+            echo "<p>Only letters and white spaces allowed in Designation<br>";
             $error = true;
         }
 
