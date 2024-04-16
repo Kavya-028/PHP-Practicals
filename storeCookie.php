@@ -1,9 +1,10 @@
 <?php
 // Check if the username is submitted
 if(isset($_POST['username'])){
-    // Store username in a cookie
     $username = $_POST['username'];
-    setcookie("username", $username, time() + (86400 * 30), "/"); // Cookie valid for 30 days
+    setcookie("username", $username, time() + (86400 * 30), "/");
+    header("Location: retrieveCookie.php"); 
+    exit(); 
 }
 ?>
 <!DOCTYPE html>
